@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <title>ng-repeat</title>
+    <style>
+        .result{
+            font-family: 'Times New Roman', Times, serif;
+            border-collapse: collapse;
+            width:auto
+        }
+        #result id, #result th{
+            border: 0px;
+            padding: 5px;
+        }
+        
+</style>
+</head>
+<body ng-app="" ng-init="employees=[
+{name:'Lathasubbu',profession:'IT',country:'India'},
+{name:'Tilaka Ratne',profession:'Cricketer',country:'Srilanka'},
+{name:'Bose',profession:'Economist',country:'USA'}
+]">
+<ul>
+    <h3>Table format</h3>
+    <table id="result">
+        <tr>
+            <th>Employee Name</th>
+            <th>Employee Profession</th>
+            <th>Employee Country</th>
+        </tr>
+
+        <tr ng-repeat="emp in employees">
+        <td>{{emp.name}}</td>
+        <td>{{emp.profession}}</td>
+        <td>{{emp.country}}</td>
+    </tr>
+
+</table>
+<h3> Employee list</h3>
+<li ng-repeat="emp in employees">{{emp.name}}-{{emp.profession}}-{{emp.country}}</li>
+
+</ul>
+</body>
+</html>
+
+
+
+
+
+

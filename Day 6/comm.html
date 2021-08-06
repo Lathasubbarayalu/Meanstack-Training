@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<title>Calculator</title>
+</head>
+ 
+<body ng-app="calcApp" ng-controller="calcController"></body>
+<h1>eCommerce</h1>
+ 
+<label>Mobile:</label>
+<input type="text" id="mobile" ng-model="mobile" placeholder="Enter mobile "><br>
+<label>Purchased Amount:</label>
+<input type="text" id="amount" ng-model="amount" placeholder="Enter amount"><br>
+<label>Do you have a card:</label>
+<input type="text" id="card" ng-model="card" placeholder="card"><br>
+<hr>
+<button ng-click="counter()">Bill</button>
+ 
+<h1>Purchase Amount: {{amount}}<br> Discount {{ }}<br> Bill pay:{{count}}<br</h1>
+ 
+<h2 ng-bind="result()"></h2>
+ 
+<script>
+var app=angular.module("calcApp",[]);
+app.controller("calcController",function($scope){
+$scope.counter=function(){
+return $scope.count = output;
+ };
+$scope.amount=0;
+$scope.result=function(){
+output=0;
+calc=0;
+ 
+if($scope.amount<=10000){
+calc=($scope.amount/100)*10;
+output=$scope.amount-calc;
+ }
+else if( $scope.amount>10000 || $scope.amount<20000){
+calc=($scope.amount/100)*20;
+output=$scope.amount-calc;
+ }
+else if($scope.amount>20000 || $scope.amount<30000){
+calc=($scope.amount/100)*30;
+output=$scope.amount-calc;
+ }
+else if($scope.amount>30000){
+calc=($scope.amount/100)*35;
+output=$scope.amount-calc;
+ }
+ 
+else {
+output='Invalid Operator';
+ }
+if($scope.card=="yes")
+ {
+calc=(($scope.amount/100)*5)-$scope.amount;
+ 
+ 
+ 
+ }
+else($scope.card=="no")
+ {
+return output;
+ }
+ 
+ };
+ });
+</script>
